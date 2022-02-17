@@ -5,5 +5,82 @@
 }
 body
 {
-    background-color: aqua;
+    background-color: rgb(165, 231, 248);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+/************************************************Barre de Navigation**************************************/
+.add_div
+{
+    width: 99%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.box_div
+{
+    height: 90%;
+    width: 98%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.add
+{
+    background-color: rgb(79, 204, 106);
+    height: 70%;
+    width: 11%;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+.add:hover
+{
+    background-color: rgba(48, 122, 64, 0.664);
+}
+/****************************************** Page Principale **********************************************/
+.parent
+{
+    width: 20%;
+    margin: 0 2%;
+}
+.parent_boutons
+{
+    background-color: rgb(79, 204, 106);
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid black;
+}
+textarea
+{
+    width: 100%;
+    height: 40vh;
+    outline: none;
+}
+button
+{
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+button:hover
+{
+    color: rgba(255, 255, 255, 0.651);
+}
+.btn_edit
+{
+    margin-top:4px;
+    margin-right: 4px;;
 }
