@@ -1,0 +1,104 @@
+*
+{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body
+{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.purple
+{
+    width: 40%;
+    height: 75%;
+    background-color: rgb(49, 0, 95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dark_purple
+{
+    width: 94%;
+    height: 94%;
+    background-color: rgb(31, 1, 59);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form
+{
+    width: 94%;
+    height: 92%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.first_part input[type="text"],.third_part input[type="submit"]
+{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+}
+.first_part input[type="text"]
+{
+    background-color: rgb(49, 0, 95);
+    color: white;
+    font-size: 1.5em;
+}
+.first_part
+{
+    height: 20%;
+    position: relative;
+}
+.first_part .copy
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.second_part
+{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.second_part input[type="text"]
+{
+    outline: none;
+}
+.third_part
+{
+    height: 20%;
+}
+.third_part input[type="submit"]
+{
+    background-color: rgb(255, 196, 0);
+    color: rgb(49, 0, 95);
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.third_part input[type="submit"]:hover
+{
+    background-color: rgb(167, 129, 4);
+}   
+.input1
+{
+    width: 10%;
+}
+.label
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+}
