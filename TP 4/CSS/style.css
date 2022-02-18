@@ -1,0 +1,29 @@
+*
+{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body
+{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.parent
+{
+    background-color: rgb(214, 211, 211);
+    width: 50%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.white_cell
+{
+    background-color: white;
+    width: 98%;
+    height: 95%;
+    border-radius: 8px;
+}
