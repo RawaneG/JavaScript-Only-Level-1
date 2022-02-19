@@ -15,6 +15,7 @@ body
 /************************************************Barre de Navigation**************************************/
 .add_div
 {
+    border: 2px solid red;
     width: 99%;
     height: 10%;
     display: flex;
@@ -23,6 +24,7 @@ body
 }
 .box_div
 {
+    border: 2px solid blue;
     height: 90%;
     width: 98%;
     display: flex;

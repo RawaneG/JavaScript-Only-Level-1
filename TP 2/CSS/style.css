@@ -38,6 +38,13 @@ a
     padding: 2%;
     border-radius: 12px;
 }
+
+a.active
+{
+    background-color: black;
+    color: white;
+}
+
 .switch_div
 {
     width: 25%;

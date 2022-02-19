@@ -28,66 +28,52 @@ for(let i = 0; i < elements.length; i++)
     let p = document.createElement('p');
 
     a.setAttribute('href',"#");
-    a.setAttribute('class','anchor');
-
     p.innerHTML = elements[i];
 
     a.appendChild(p);
     L_parent.appendChild(a);    
 }
 
-const a = document.querySelectorAll('.anchor');
-
-for(let i = 0; i < a.length; i++)
-{
-    a[i].addEventListener('mouseover',mouseOver);
-    a[i].addEventListener('mouseout',mouseOut);
-
-    function mouseOver()
-    {
-        a[i].style.color = "white";
-        a[i].style.backgroundColor = "red";
-        a[i].style.transition = "0.3s ease-in-out";
-    }
-    function mouseOut()
-    {
-        a[i].style.color = "black";
-        a[i].style.backgroundColor = "white";
-        a[i].style.transition = "0.3s ease-in-out";
-    }
-
-    counterL++;
-}
+const a = document.querySelectorAll('a');
 
     function partageR(element)
     {
-        R_parent.appendChild(element);
-    }
-    function partageL(element)
-    {
-        L_parent.appendChild(element);
-    }
-    function focus(element)
-    {
-        element.style.backgroundColor = "black";
+        return R_parent.appendChild(element);
     }
 
-if(counterL == 4)   
-{
-    disable(btnRight);
-}
+    function partageL(element)
+    {
+        return L_parent.appendChild(element);
+    }
 
 for(let i = 0; i < a.length; i++)
 {
     a[i].addEventListener('click', ()=>
     {
-        focus(a[i]);
-        enable(btnRight);   
-             
-        btnRight.addEventListener('click', ()=>
-        {
-            partageR(a[i]);
-            counterL--;
-        });
+        a[i].classList.toggle('active');
     });
 }
+
+btnRight.addEventListener('click',()=>{
+    const a_gauche = L_parent.querySelectorAll('a');
+    for(let i = 0; i < a_gauche.length; i++)
+    {
+        if(a_gauche[i].className == "active")
+        {
+            a_gauche[i].className = "";
+            R_parent.appendChild(a_gauche[i]);
+        }
+    }
+});
+
+btnLeft.addEventListener('click',()=>{
+    const a_droite = R_parent.querySelectorAll('a');
+    for(let i = 0; i < a_droite.length; i++)
+    {
+        if(a_droite[i].className == "active")
+        {
+            a_droite[i].className = "";
+            L_parent.appendChild(a_droite[i]);
+        }
+    }
+});
