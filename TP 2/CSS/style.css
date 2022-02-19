@@ -19,32 +19,24 @@ body
     justify-content: space-around;
     align-items: center;
 }
-.white_div
+.R,.L
 {
     background-color: white;
     width: 35%;
     height: 95%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
-table
+a
 {
-    width: 70%;
-    height: 60%;
-}
-table a
-{
-    display: block;
     text-decoration: none;
     color: black;
-    padding: 3%;
-    border-radius: 6px;
-    transition: 0.3s ease-in-out;
-}
-table a:hover
-{
-    background-color: blue;
-    color: white;
+    display: block;
+    width: 80%;
+    padding: 2%;
+    border-radius: 12px;
 }
 .switch_div
 {
