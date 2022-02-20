@@ -7,19 +7,34 @@
     <title>TP 4</title>
 </head>
 <body>
-    <div class="parent">
-        <div class="white_cell">
-            <form class="text">
-                <h2>Quel est le meilleur language de Programmation en 2022</h2>
-                <label for="java"><input id="java" type="radio"> Java</label>
-                <label for="c"><input id="c" type="radio"> C</label>
-                <label for="python"><input id="python" type="radio"> Python</label>
-                <label for="javascript"><input id="javascript" type="radio"> JavaScript</label>
-            </form>
-            <div class="purple_button">
-                <p>Suivant</p>
+    <div class="parent" id="quiz">
+        <div class="second_parent">
+            <div class="content">
+                <h2 id="question">Question Text</h2>
+                <ul>
+                    <li>
+                        <input type="radio" name="reponse" id="a" class="reponse">
+                        <label for="a" id="a_text">Réponse</label>
+                    </li>
+    
+                    <li>
+                        <input type="radio" name="reponse" id="b" class="reponse">
+                        <label for="b" id="b_text">Réponse</label>
+                    </li>
+    
+                    <li>
+                        <input type="radio" name="reponse" id="c" class="reponse">
+                        <label for="c" id="c_text">Réponse</label>
+                    </li>
+    
+                    <li><input type="radio" name="reponse" id="d" class="reponse">
+                        <label for="d" id="d_text">Réponse</label>
+                    </li>
+                </ul>
             </div>
+            <button id="submit">Suivant</button>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
