@@ -54,7 +54,9 @@ for(let i = 0; i < a.length; i++)
     });
 }
 
+
 btnRight.addEventListener('click',()=>{
+    
     const a_gauche = L_parent.querySelectorAll('a');
     for(let i = 0; i < a_gauche.length; i++)
     {
@@ -62,6 +64,7 @@ btnRight.addEventListener('click',()=>{
         {
             a_gauche[i].className = "";
             R_parent.appendChild(a_gauche[i]);
+            counterR++;
         }
     }
 });
@@ -77,3 +80,4 @@ btnLeft.addEventListener('click',()=>{
         }
     }
 });
+

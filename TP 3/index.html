@@ -9,34 +9,35 @@
 <body>
     <div class="purple">
         <div class="dark_purple">
-            <form action="">
+            <div class="form">
                 <div class="first_part">
-                    <label for="">
-                        <input type="text" class="input">
-                        <input type="submit" value="copy" class="copy">
-                    </label>
+                        <span id="output"></span>
+                        <button class="copy" id="copie">Copier</button>
                 </div>
                 <div class="second_part">
-                    <label for="" class="label">Largeur du Password
-                        <input type="text" class="input1">
-                    </label>
-                    <label for="" class="label">Contient des Lettres Majuscules
-                        <input type="checkbox">
-                    </label>
-                    <label for="" class="label">Contient des Lettres Minuscules
-                        <input type="checkbox">
-                    </label>
-                    <label for="" class="label">Contient des Nombres
-                        <input type="checkbox">
-                    </label>
-                    <label for="" class="label">Contient des Caractères Spéciaux
-                        <input type="checkbox">
-                    </label>
+                    <div class="setting">
+                        <label>Longueur du Password </label>
+                        <input type="text" id="longueur" class="input1">
+                    </div>
+                    <div class="setting">
+                        <label>Contient des Lettres Majuscules </label>
+                        <input type="checkbox" id="majuscule">
+                    </div>
+                    <div class="setting">
+                        <label id="longueur">Contient des Lettres Minuscules</label>
+                        <input type="checkbox" id="miniscule">
+                    </div>
+                    <div class="setting">
+                        <label id="longueur">Contient des Nombres</label>
+                        <input type="checkbox" id="nombre">
+                    </div>
+                    <div class="setting">
+                        <label id="longueur">Contient des Caractères Spéciaux</label>
+                        <input type="checkbox" id="cSpeciaux">
+                    </div>
                 </div>
-                <div class="third_part">
-                    <input type="submit" value="Generer le Mot de Passe">
-                </div>
-            </form>
+                <button class="third_part" id="generer">Génerer le Mot de Passe</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
