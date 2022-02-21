@@ -5,7 +5,10 @@
 }
 body
 {
-    background-color: rgb(165, 231, 248);
+    background-image: url("/home/rawane/Bureau/Sonatel Academy/Code/Javascript/ecran.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
