@@ -1,13 +1,4 @@
-const quiz = document.getElementById('demo');
-const question = document.getElementById('question');
-const reponse = document.querySelectorAll('.answer');
-const a = document.getElementById('a_text');
-const b = document.getElementById('b_text');
-const c = document.getElementById('c_text');
-const d = document.getElementById('d_text');
-const submit = document.getElementById('submit');
- 
-const questions = 
+ const quizData = 
 [
     {
         question : "Quel est le meilleur langage de programmation en 2022",
@@ -15,7 +6,7 @@ const questions =
         b : "C",
         c : "Python",
         d : "Javascript",
-        correct : "d"
+        correct : "d",
     },
     {
         question : "Etes vous",
@@ -23,7 +14,7 @@ const questions =
         b : "Non",
         c : "Peut être",
         d : "C'est pas vos oignons",
-        correct : "a"
+        correct : "a",
     },
     {
         question : "Pourquoi",
@@ -31,7 +22,7 @@ const questions =
         b : "j'en sais rien",
         c : "il faut accepter",
         d : "C'est pas vos oignons",
-        correct : "a"
+        correct : "a",
     },
     {
         question : "Quoi ?",
@@ -39,6 +30,6 @@ const questions =
         b : "Rien",
         c : "je suis désolé",
         d : "oui",
-        correct : "a"
+        correct : "a",
     }
 ];

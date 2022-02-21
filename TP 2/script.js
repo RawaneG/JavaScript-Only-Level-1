@@ -6,10 +6,6 @@ const R_parent = document.getElementById("R");
 const btnRight = document.getElementById('to_right');
 const btnLeft = document.getElementById('to_left');
 
-
-var counterL = 0;
-var counterR = 0;
-
 function disable(input)
 {
     input.disabled = true;
@@ -21,6 +17,8 @@ function enable(input)
     input.disabled = false;
     input.style.pointerEvents = "";
 }
+
+// Parcours une boucle pour y ajouter les balises a
 
 for(let i = 0; i < elements.length; i++)
 {   
@@ -34,26 +32,22 @@ for(let i = 0; i < elements.length; i++)
     L_parent.appendChild(a);    
 }
 
+// Je recupère toutes les balises a et les mets dans une constante
+
 const a = document.querySelectorAll('a');
 
-    function partageR(element)
-    {
-        return R_parent.appendChild(element);
-    }
-
-    function partageL(element)
-    {
-        return L_parent.appendChild(element);
-    }
+//On active la class active de a au moment ou cette dernière est cliquée
 
 for(let i = 0; i < a.length; i++)
 {
-    a[i].addEventListener('click', ()=>
+    a[i].addEventListener('mouseover', ()=>
     {
         a[i].classList.toggle('active');
     });
 }
 
+//Après avoir cliqué le bouton pour transférer on vérifie d'abord si l'élément a déjà la classe active activée
+//dans ce cas on le transfère dans l'autre bloc
 
 btnRight.addEventListener('click',()=>{
     
@@ -64,10 +58,11 @@ btnRight.addEventListener('click',()=>{
         {
             a_gauche[i].className = "";
             R_parent.appendChild(a_gauche[i]);
-            counterR++;
         }
     }
 });
+
+//Même procédé pour partir du bloc droit au bloc gauche
 
 btnLeft.addEventListener('click',()=>{
     const a_droite = R_parent.querySelectorAll('a');

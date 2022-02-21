@@ -1,12 +1,12 @@
 const output = document.getElementById('output');
 const longueur = document.getElementById('longueur');
+const defautLongueur = longueur.value = 15;
 const majuscule = document.getElementById('majuscule');
 const miniscule = document.getElementById('miniscule');
 const nombre = document.getElementById('nombre');
 const cSpeciaux = document.getElementById('cSpeciaux');
 const generer = document.getElementById('generer');
 const copie = document.getElementById('copie');
-const defautLongueur = longueur.value = 15;
 
 const alFonction =
 {
@@ -27,20 +27,15 @@ generer.addEventListener('click', () => {
     {
         return alert('Veuillez entrer un mot de passe compris entre 5 et 20 caractères');
     }
-
+    
     output.innerText = genererMdp(longueurValeur,majusculeBool,minisculeBool,nombreBool,cSpeciauxBool); 
 });
 
-function genererMdp(longueur , majuscule ,miniscule , nombre , symbole)
+function genererMdp(longueur, majuscule , miniscule , nombre , symbole)
 {
     let generatedPassword = '';
 
     const compteurType = majuscule + miniscule + nombre + symbole;
-
-    if(compteurType === 0)
-    {
-        return alert('Veuillez cocher au moins un critère');
-    }
     
     const typeArray = [
         {majuscule},
@@ -49,11 +44,15 @@ function genererMdp(longueur , majuscule ,miniscule , nombre , symbole)
         {symbole}
     ].filter(item => Object.values(item)[0]); 
 
+    if(compteurType === 0)
+    {
+        return alert('Veuillez cocher au moins un critère');
+    }
+
     for(let i = 0; i < longueur; i += compteurType)
     {
         typeArray.forEach(type => {
             const nomFonction = Object.keys(type)[0];
-            console.log('nomFonction', nomFonction);
             generatedPassword += alFonction[nomFonction]();
         });
     }
