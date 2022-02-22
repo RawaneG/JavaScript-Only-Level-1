@@ -17,6 +17,17 @@ function enable(input)
     input.disabled = false;
     input.style.pointerEvents = "";
 }
+function desactiver(element,btn)
+{
+    if(element.children.length === 0)
+    {
+        disable(btn);
+    }
+    else
+    {
+        enable(btn);
+    }
+}
 
 
 // Parcours une boucle pour y ajouter les balises a
@@ -46,12 +57,12 @@ for(let i = 0; i < a.length; i++)
         a[i].classList.toggle('active');
     });
 }
-
+disable(btnLeft);
 //Après avoir cliqué le bouton pour transférer on vérifie d'abord si l'élément a déjà la classe active activée
 //dans ce cas on le transfère dans l'autre bloc
 
 btnRight.addEventListener('click',()=>{
-    
+    enable(btnLeft);
     const a_gauche = L_parent.querySelectorAll('a');
     for(let i = 0; i < a_gauche.length; i++)
     {
@@ -61,11 +72,13 @@ btnRight.addEventListener('click',()=>{
             R_parent.appendChild(a_gauche[i]);
         }
     }
+    desactiver(L_parent,btnRight);
 });
 
 //Même procédé pour partir du bloc droit au bloc gauche
 
 btnLeft.addEventListener('click',()=>{
+    enable(btnRight);
     const a_droite = R_parent.querySelectorAll('a');
     for(let i = 0; i < a_droite.length; i++)
     {
@@ -75,5 +88,7 @@ btnLeft.addEventListener('click',()=>{
             L_parent.appendChild(a_droite[i]);
         }
     }
+    desactiver(R_parent,btnLeft);
+
 });
 

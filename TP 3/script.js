@@ -7,6 +7,7 @@ const nombre = document.getElementById('nombre');
 const cSpeciaux = document.getElementById('cSpeciaux');
 const generer = document.getElementById('generer');
 const copie = document.getElementById('copie');
+const check = document.querySelectorAll('.checked');
 
 function alMin()
 {
@@ -26,7 +27,16 @@ function alSymbole()
     return symbole[Math.floor(Math.random() * symbole.length)];
 } 
 
-
+function disable(element)
+{
+    element.disabled = true;
+    element.style.pointerEvents = 'none';
+}
+function enable(element)
+{
+    element.disabled = false;
+    element.style.pointerEvents = '';
+}
 
 const alFonction =
 {
@@ -36,19 +46,17 @@ const alFonction =
     symbole : alSymbole
 };
 
+
 generer.addEventListener('click', () => {
     const longueurValeur = +longueur.value;
     const majusculeBool = majuscule.checked;
     const minisculeBool = miniscule.checked;
     const nombreBool = nombre.checked;
     const cSpeciauxBool = cSpeciaux.checked;
-
-    if(longueurValeur < 5 || longueurValeur > 20)
-    {
-        return alert('Veuillez entrer un mot de passe compris entre 5 et 20 caractères');
-    }
     
     output.innerText = genererMdp(longueurValeur,majusculeBool,minisculeBool,nombreBool,cSpeciauxBool); 
+
+    copie.removeAttribute('hidden');
 });
 
 function genererMdp(longueur, majuscule , miniscule , nombre , symbole)

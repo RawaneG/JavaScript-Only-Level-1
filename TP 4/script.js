@@ -10,7 +10,7 @@ const submit = document.getElementById('submit');
 const quizData = 
 [
     {
-        question : "Quel est le meilleur langage de programmation en 2022",
+        question : "Quel est le meilleur langage de programmation en 2022 ? ",
         a : "Java",
         b : "C",
         c : "Python",
@@ -18,36 +18,36 @@ const quizData =
         correct : "d",
     },
     {
-        question : "Etes vous ?",
-        a : "Oui",
-        b : "Non",
-        c : "Peut être",
-        d : "C'est pas vos oignons",
+        question : "Le programme qui rectifie les erreurs commises par le programmeur est :",
+        a : "Le débugger",
+        b : "L'éditeur de texte",
+        c : "Le compilateur",
+        d : "Je sais pas",
         correct : "a",
     },
     {
-        question : "Pourquoi ?",
-        a : "parceque",
-        b : "j'en sais rien",
-        c : "il faut accepter",
-        d : "C'est pas vos oignons",
+        question : " L'un de ceux-ci n'est pas un programme :",
+        a : "l'IDE",
+        b : "le compilateur",
+        c : "le code source",
+        d : "Je sais pas",
+        correct : "c",
+    },
+    {
+        question : " L'extension du programme est :",
+        a : ".exe",
+        b : ".avi",
+        c : ".doc",
+        d : "Je sais pas",
         correct : "a",
     },
     {
-        question : "Quoi ?",
-        a : "Feur",
-        b : "Rien",
-        c : "je suis désolé",
-        d : "oui",
-        correct : "a",
-    },
-    {
-        question : "Quoi ?",
-        a : "Feur",
-        b : "Rien",
-        c : "non",
-        d : "oui",
-        correct : "a",
+        question : " Un éditeur de texte :",
+        a : "permet de corriger et rectifier les erreurs commises par le développeur",
+        b : "permet d'écrire le code source",
+        c : "permet de faire la traduction du code source au langage binaire",
+        d : "Je sais pas",
+        correct : "b",
     }
 ];
 
@@ -58,8 +58,11 @@ chargeQuiz();
 
 function chargeQuiz()
 {
-    reponsesNonChoisies();
+    //On appelle une fonction permettant de décocher toutes les valeurs d'emblée
+    decocheReponse();
 
+    //On affecte aux différents champs les questions ainsi que les réponses
+    
     const donneeQuizActuel = quizData[quizActuel];
     question.innerText = donneeQuizActuel.question;
     aText.innerText = donneeQuizActuel.a;
@@ -68,12 +71,12 @@ function chargeQuiz()
     dText.innerText = donneeQuizActuel.d;
 }
 
-function reponsesNonChoisies()
+function decocheReponse()
 {
     reponses.forEach(param => param.checked = false);
 }
 
-function reponseChoisie()
+function reponseCoche()
 {
     let reponse;
     reponses.forEach(param => {
@@ -86,7 +89,7 @@ function reponseChoisie()
 }
 
 submit.addEventListener('click', () => {
-    const reponse = reponseChoisie();
+    const reponse = reponseCoche();
     if(reponse)
     {
         if(reponse === quizData[quizActuel].correct)
