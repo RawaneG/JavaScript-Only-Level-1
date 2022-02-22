@@ -31,5 +31,13 @@
         c : "je suis désolé",
         d : "oui",
         correct : "a",
+    },
+    {
+        question : "Quoi ?",
+        a : "Feur",
+        b : "Rien",
+        c : "je suis désolé",
+        d : "oui",
+        correct : "a",
     }
 ];

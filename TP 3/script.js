@@ -8,6 +8,26 @@ const cSpeciaux = document.getElementById('cSpeciaux');
 const generer = document.getElementById('generer');
 const copie = document.getElementById('copie');
 
+function alMin()
+{
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
+function alMaj()
+{
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+function alNombre()
+{
+    return +String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
+function alSymbole()
+{
+    const symbole = '!@#$%^&*(){}[]=<>/,.';
+    return symbole[Math.floor(Math.random() * symbole.length)];
+} 
+
+
+
 const alFonction =
 {
     majuscule : alMaj,
@@ -53,6 +73,7 @@ function genererMdp(longueur, majuscule , miniscule , nombre , symbole)
     {
         typeArray.forEach(type => {
             const nomFonction = Object.keys(type)[0];
+            console.log(nomFonction);
             generatedPassword += alFonction[nomFonction]();
         });
     }
@@ -62,20 +83,19 @@ function genererMdp(longueur, majuscule , miniscule , nombre , symbole)
 	return mdpFinal;
 }
 
-function alMin()
-{
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-function alMaj()
-{
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
-function alNombre()
-{
-    return +String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-function alSymbole()
-{
-    const symbole = '!@#$%^&*(){}[]=<>/,.';
-    return symbole[Math.floor(Math.random() * symbole.length)];
-} 
+copie.addEventListener('click',() => {
+    const textarea = document.createElement('textarea');
+    const mdp = output.innerText;
+
+    if(!mdp)
+    {
+        return;
+    }
+
+    textarea.value = mdp;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    textarea.remove();
+    alert('Le texte a été copié avec succès.');
+});
