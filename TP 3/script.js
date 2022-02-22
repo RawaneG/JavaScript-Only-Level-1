@@ -56,14 +56,14 @@ function genererMdp(longueur, majuscule , miniscule , nombre , symbole)
     let generatedPassword = '';
 
     const compteurType = majuscule + miniscule + nombre + symbole;
-    
+    console.log(compteurType);
     const typeArray = [
         {majuscule},
         {miniscule},
         {nombre},
         {symbole}
     ].filter(item => Object.values(item)[0]); 
-
+    console.log(typeArray);
     if(compteurType === 0)
     {
         return alert('Veuillez cocher au moins un critère');
