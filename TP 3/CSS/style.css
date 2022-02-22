@@ -12,8 +12,41 @@ body
     background-size: cover;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
+}
+.first_container
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
+    align-items: center;
+}
+.second_container
+{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 10%;
+    align-items: center;
+}
+.second_container a 
+{
+    width: 10%;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(21, 44, 105);
+    display: block;
+    padding: 1%;
+    border-radius: 12px;
+    transition: 0.3s ease-in-out;
+    text-align: center;
+}
+.second_container a:hover
+{
+    opacity: 0.6;
+    background-color: rgb(21, 44, 105);
 }
 .purple
 {

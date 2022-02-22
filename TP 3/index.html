@@ -7,36 +7,43 @@
     <title>TP 3</title>
 </head>
 <body>
-    <div class="purple">
-        <div class="dark_purple">
-            <div class="form">
-                <div class="first_part">
-                        <span id="output"></span>
-                        <button class="copy" id="copie">Copier</button>
+    <div class="second_container">
+        <a class="exo" href="../TP 2/index.html">Précédent</a>
+        <a class="exo" href="../index.html">Menu</a>
+        <a class="exo" href="../TP 4/index.html">Suivant</a>
+    </div>
+    <div class="first_container">
+        <div class="purple">
+            <div class="dark_purple">
+                <div class="form">
+                    <div class="first_part">
+                            <span id="output"></span>
+                            <button class="copy" id="copie">Copier</button>
+                    </div>
+                    <div class="second_part">
+                        <div class="setting">
+                            <label for="longueur">Longueur du Password </label>
+                            <input type="text" id="longueur" class="input1">
+                        </div>
+                        <div class="setting">
+                            <label for="majuscule">Contient des Lettres Majuscules </label>
+                            <input type="checkbox" id="majuscule">
+                        </div>
+                        <div class="setting">
+                            <label for="miniscule">Contient des Lettres Minuscules</label>
+                            <input type="checkbox" id="miniscule">
+                        </div>
+                        <div class="setting">
+                            <label for="nombre">Contient des Nombres</label>
+                            <input type="checkbox" id="nombre">
+                        </div>
+                        <div class="setting">
+                            <label for="cSpeciaux">Contient des Caractères Spéciaux</label>
+                            <input type="checkbox" id="cSpeciaux">
+                        </div>
+                    </div>
+                    <button class="third_part" id="generer">Génerer le Mot de Passe</button>
                 </div>
-                <div class="second_part">
-                    <div class="setting">
-                        <label for="longueur">Longueur du Password </label>
-                        <input type="text" id="longueur" class="input1">
-                    </div>
-                    <div class="setting">
-                        <label for="majuscule">Contient des Lettres Majuscules </label>
-                        <input type="checkbox" id="majuscule">
-                    </div>
-                    <div class="setting">
-                        <label for="miniscule">Contient des Lettres Minuscules</label>
-                        <input type="checkbox" id="miniscule">
-                    </div>
-                    <div class="setting">
-                        <label for="nombre">Contient des Nombres</label>
-                        <input type="checkbox" id="nombre">
-                    </div>
-                    <div class="setting">
-                        <label for="cSpeciaux">Contient des Caractères Spéciaux</label>
-                        <input type="checkbox" id="cSpeciaux">
-                    </div>
-                </div>
-                <button class="third_part" id="generer">Génerer le Mot de Passe</button>
             </div>
         </div>
     </div>

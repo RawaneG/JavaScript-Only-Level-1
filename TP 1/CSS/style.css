@@ -13,7 +13,34 @@ body
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
+}
+.first_container
+{
+    width: 100%;
+    height: 100%;
+}
+.second_container
+{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 10%;
+    align-items: center;
+}
+.second_container a 
+{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(21, 44, 105);
+    text-align: center;
+    display: block;
+    padding: 1%;
+    border-radius: 12px;
+    transition: 0.3s ease-in-out;
+}
+.second_container a:hover
+{
+    opacity: 0.6;
 }
 /************************************************Barre de Navigation**************************************/
 .add_div
@@ -34,7 +61,7 @@ body
 }
 .add
 {
-    background-color: rgb(79, 204, 106);
+    background-color: rgb(21, 44, 105);
     height: 70%;
     width: 11%;
     border-radius: 6px;
@@ -48,7 +75,7 @@ body
 }
 .add:hover
 {
-    background-color: rgba(48, 122, 64, 0.664);
+    opacity: 0.6;
 }
 /****************************************** Page Principale **********************************************/
 .parent
@@ -58,7 +85,7 @@ body
 }
 .parent_boutons
 {
-    background-color: rgb(79, 204, 106);
+    background-color: rgb(21, 44, 105);
     display: flex;
     justify-content: flex-end;
     border: 1px solid black;

@@ -18,6 +18,7 @@ function enable(input)
     input.style.pointerEvents = "";
 }
 
+
 // Parcours une boucle pour y ajouter les balises a
 
 for(let i = 0; i < elements.length; i++)
