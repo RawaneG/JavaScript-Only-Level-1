@@ -16,7 +16,7 @@ function alMin()
 }
 function alMaj()
 {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+    return alMin().toUpperCase();
 }
 function alNombre()
 {
@@ -66,11 +66,7 @@ generer.addEventListener('click', () => {
     const minisculeBool = miniscule.checked;
     const nombreBool = nombre.checked;
     const cSpeciauxBool = cSpeciaux.checked;
-    
-    if(longueur.value < 5 || longueur.value > 20)
-    {
-        return alert('Veuillez entrer une valeur comprise entre 5 et 20');
-    }
+
     output.innerText = genererMdp(longueurValeur,majusculeBool,minisculeBool,nombreBool,cSpeciauxBool); 
 
     copie.removeAttribute('hidden');
@@ -89,10 +85,6 @@ function genererMdp(longueur, majuscule , miniscule , nombre , symbole)
         {symbole}
     ].filter(item => Object.values(item)[0]); 
     console.log(typeArray);
-    if(compteurType === 0)
-    {
-        return alert('Veuillez cocher au moins un critère');
-    }
 
     for(let i = 0; i < longueur; i += compteurType)
     {
