@@ -69,8 +69,11 @@ generer.addEventListener('click', () => {
 
     output.innerText = genererMdp(longueurValeur,majusculeBool,minisculeBool,nombreBool,cSpeciauxBool); 
 
-    copie.removeAttribute('hidden');
 });
+
+output.addEventListener('mouseover',() => {
+    copie.removeAttribute('hidden');
+})
 
 function genererMdp(longueur, majuscule , miniscule , nombre , symbole)
 {
