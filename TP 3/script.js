@@ -7,7 +7,8 @@ const nombre = document.getElementById('nombre');
 const cSpeciaux = document.getElementById('cSpeciaux');
 const generer = document.getElementById('generer');
 const copie = document.getElementById('copie');
-const check = document.querySelectorAll('.checked');
+const check = document.querySelectorAll(".checked");
+const checkboxes = Array.from(document.querySelectorAll("input[type=checkbox]"))
 
 function alMin()
 {
@@ -27,15 +28,39 @@ function alSymbole()
     return symbole[Math.floor(Math.random() * symbole.length)];
 } 
 
-function disable(element)
-{
-    element.disabled = true;
-    element.style.pointerEvents = 'none';
+longueur.addEventListener('input',()=>{
+    const results = checkboxes.filter(checkbox)
+    if(longueur.value >= 5 && longueur.value <= 20 && results.length > 0)
+    {
+        generer.removeAttribute('disabled');
+    }
+    else
+    {
+        // generer.style.pointerEvents = 'none';
+        generer.setAttribute('disabled','disabled');
+    }
+})
+
+function checkbox(checkbox){
+    return checkbox.checked
 }
-function enable(element)
-{
-    element.disabled = false;
-    element.style.pointerEvents = '';
+
+for (let i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].addEventListener("click", ()=>{
+    const results = checkboxes.filter(checkbox)
+
+        if(longueur.value >= 5 && longueur.value <= 20 && results.length > 0)
+        {
+            generer.removeAttribute('disabled');
+        }
+        else
+        {
+            // generer.style.pointerEvents = 'none';
+            generer.setAttribute('disabled','disabled');
+        }
+    }
+    )
+    
 }
 
 const alFonction =
@@ -54,6 +79,10 @@ generer.addEventListener('click', () => {
     const nombreBool = nombre.checked;
     const cSpeciauxBool = cSpeciaux.checked;
     
+    if(longueur.value < 5 || longueur.value > 20)
+    {
+        return alert('Veuillez entrer une valeur comprise entre 5 et 20');
+    }
     output.innerText = genererMdp(longueurValeur,majusculeBool,minisculeBool,nombreBool,cSpeciauxBool); 
 
     copie.removeAttribute('hidden');

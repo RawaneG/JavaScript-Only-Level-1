@@ -17,6 +17,7 @@ function enable(input)
     input.disabled = false;
     input.style.pointerEvents = "";
 }
+
 function desactiver(element,btn)
 {
     if(element.children.length === 0)
@@ -52,7 +53,7 @@ const a = document.querySelectorAll('a');
 
 for(let i = 0; i < a.length; i++)
 {
-    a[i].addEventListener('mouseover', ()=>
+    a[i].addEventListener('click', ()=>
     {
         a[i].classList.toggle('active');
     });

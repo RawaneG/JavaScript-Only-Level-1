@@ -133,10 +133,14 @@ body
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
-.third_part:hover
+/* .third_part:hover
 {
     background-color: rgb(167, 129, 4);
-}   
+}    */
+ .third_part:disabled
+{
+    background-color: rgb(167, 4, 18);
+}    
 .input1
 {
     width: 10%;
