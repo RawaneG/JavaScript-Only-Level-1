@@ -31,14 +31,9 @@ function alSymbole()
 longueur.addEventListener('input',()=>{
     const results = checkboxes.filter(checkbox)
     if(longueur.value >= 5 && longueur.value <= 20 && results.length > 0)
-    {
         generer.removeAttribute('disabled');
-    }
     else
-    {
-        // generer.style.pointerEvents = 'none';
         generer.setAttribute('disabled','disabled');
-    }
 })
 
 function checkbox(checkbox){
@@ -49,18 +44,11 @@ for (let i = 0; i < checkboxes.length; i++) {
     checkboxes[i].addEventListener("click", ()=>{
     const results = checkboxes.filter(checkbox)
 
-        if(longueur.value >= 5 && longueur.value <= 20 && results.length > 0)
-        {
-            generer.removeAttribute('disabled');
-        }
-        else
-        {
-            // generer.style.pointerEvents = 'none';
-            generer.setAttribute('disabled','disabled');
-        }
-    }
-    )
-    
+    if(longueur.value >= 5 && longueur.value <= 20 && results.length > 0)
+        generer.removeAttribute('disabled');
+    else
+        generer.setAttribute('disabled','disabled');
+ })
 }
 
 const alFonction =

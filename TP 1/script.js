@@ -1,12 +1,17 @@
-    document.getElementById("add_div").addEventListener("click", () => {
-        createBloc();
-    });
+boxDiv = document.getElementById("add_div")
+
+    boxDiv.addEventListener("click", () => {
+    createBloc();
+});
 
 let i = 0;
 
 function createBloc()
 {
-    document.getElementById('box_div').innerHTML += `<div class="parent" id="parent${i}">
+    let box = document.createElement("div")
+    box.setAttribute("id", "parent"+i)
+    box.setAttribute("class", "parent")
+    box.innerHTML = `
     <div class="parent_boutons">
         <button class="btn_edit" id="modifier" onclick="editBloc(${i})">
             <i class='fa fa-edit' style='font-size:26px'></i>
@@ -17,9 +22,8 @@ function createBloc()
     </div>
     <div class="textarea" id="textarea" ">
         <textarea id="area${i}"></textarea>
-    </div>
     </div>`;
-
+    document.getElementById('box_div').appendChild(box)
     i++;
 }
 
