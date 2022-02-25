@@ -28,6 +28,14 @@ function alSymbole()
     return symbole[Math.floor(Math.random() * symbole.length)];
 } 
 
+const alFonction =
+{
+    majuscule : alMaj,
+    miniscule : alMin,
+    nombre : alNombre,
+    symbole : alSymbole
+};
+
 longueur.addEventListener('input',()=>{
     const results = checkboxes.filter(checkbox)
     if(longueur.value >= 5 && longueur.value <= 20 && results.length > 0)
@@ -51,15 +59,6 @@ for (let i = 0; i < checkboxes.length; i++) {
  })
 }
 
-const alFonction =
-{
-    majuscule : alMaj,
-    miniscule : alMin,
-    nombre : alNombre,
-    symbole : alSymbole
-};
-
-
 generer.addEventListener('click', () => {
     const longueurValeur = +longueur.value;
     const majusculeBool = majuscule.checked;
@@ -74,7 +73,7 @@ generer.addEventListener('click', () => {
 output.addEventListener('mouseover',() => {
     copie.removeAttribute('hidden');
 })
-
+                            //  //  Fonction permettant de générer le mot de passe
 function genererMdp(longueur, majuscule , miniscule , nombre , symbole)
 {
     let generatedPassword = '';
@@ -103,6 +102,7 @@ function genererMdp(longueur, majuscule , miniscule , nombre , symbole)
 	return mdpFinal;
 }
 
+                                            //  //  Copie du mot de passe
 copie.addEventListener('click',() => {
     const textarea = document.createElement('textarea');
     const mdp = output.innerText;
